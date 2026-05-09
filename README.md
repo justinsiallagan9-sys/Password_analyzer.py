@@ -1,1 +1,1 @@
-# Password_analyzer.py
+# Aplikasi password nalyzer
