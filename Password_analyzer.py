@@ -90,15 +90,29 @@ elif selected == "Analisis Password":
         st.info(f"{total_kombinasi:,}")
 
         #konversi waktu sederhana
-        if detik > 60:
+        if detik < 60:
             hasil_waktu = f"{detik:.2f} Detik"
-        elif detik < 315360:
+        elif detik < 3600:
+            hasil_waktu = f"{detik/60:.2f} Menit"
+        elif detik < 86400:
+            hasil_waktu = f"{detik/3600:.2f} Jam"
+        elif detik < 31536000:
             hasil_waktu = f"{detik/86400:.2f} Hari"
-        else :
+        else:
             hasil_waktu = f"{detik/31536000:.2f} Tahun"
-
+            
         st.subheader("Estimasi waktu retas: ")
         st.error(hasil_waktu)
+        
+        if detik < 86400:
+            # Jika bisa diretas kurang dari 1 hari (86400 detik)
+            st.error("TIDAK AMAN ❌ (Sangat rentan terhadap serangan Brute Force)")
+        elif detik < 31536000:
+            # Jika bisa diretas dalam hitungan hari hingga 1 tahun (31536000 detik)
+            st.warning("RENTAN ⚠️ (Bisa diretas, segera ganti password Anda)")
+        else:
+            # Jika butuh lebih dari 1 tahun
+            st.success("AMAN ✅ (Kombinasi kuat)")
 
         st.write("*Analisa menggunakan rumus matematika $T = n^k/ R$.*")
 
