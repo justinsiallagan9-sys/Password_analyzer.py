@@ -1,153 +1,187 @@
 import streamlit as st
-import pandas as pd
 
-# --- KONFIGURASI ---
-st.set_page_config(page_title="Simulasi TIK Profesional SMK", layout="wide", page_icon="💡")
+# --- KONFIGURASI HALAMAN ---
+st.set_page_config(page_title="Media Pembelajaran Perangkat Keras", layout="centered", page_icon="💻")
 
-# Menggunakan session_state untuk menyimpan progres siswa
-if 'skor' not in st.session_state:
-    st.session_state.skor = 0
-if 'modul_selesai' not in st.session_state:
-    st.session_state.modul_selesai = []
-
-# --- SIDEBAR ---
+# --- SIDEBAR NAVIGASI ---
 with st.sidebar:
-    st.title("👨‍💻 Ruang Kerja TIK")
-    menu = st.radio("Pilih Proyek Hari Ini:", 
-                    ["1. Studi Kasus: Sekretaris Kewalahan", 
-                     "2. Simulator Logika Excel", 
-                     "3. Uji Pemikiran (HOTS)"])
+    st.title("🖥️ Menu Navigasi")
+    menu = st.radio("Pilih Halaman:", 
+                    ["1. Beranda", 
+                     "2. Materi Komputer", 
+                     "3. Latihan Evaluasi"])
     st.divider()
-    st.progress(len(st.session_state.modul_selesai) / 3, text="Progres Belajarmu")
+    st.info("Media Pembelajaran Interaktif berbasis Website - Informatika SMK")
 
-# --- HALAMAN 1: STUDI KASUS WORD (Konteks Dunia Nyata) ---
-if menu == "1. Studi Kasus: Sekretaris Kewalahan":
-    st.title("Kasus 1: Mengurus 500 Surat Undangan ✉️")
+# ==========================================
+# HALAMAN 1: BERANDA
+# ==========================================
+if menu == "1. Beranda":
+    st.title("Selamat Datang di Portal Informatika! 🚀")
+    st.image("https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", use_column_width=True)
     
     st.markdown("""
-    **Misi Kamu:**
-    Bayangkan kamu adalah staf administrasi di sebuah perusahaan bergengsi. Bos memintamu mengirimkan surat undangan rapat tahunan kepada **500 investor berbeda** (nama dan alamat berbeda). 
-    Acara dimulai *besok pagi*.
+    ### Belajar Perangkat Keras Komputer (Hardware)
+    Website ini dikembangkan sebagai media pembelajaran interaktif untuk membantu Anda memahami dasar-dasar perangkat keras komputer. 
+    
+    **Apa yang akan Anda dapatkan di sini?**
+    * 📖 **Materi Terstruktur:** Penjelasan ringkas dan mudah dipahami mengenai konsep dasar komputer dan komponen-komponennya.
+    * 📝 **Latihan Interaktif:** Uji pemahaman Anda melalui 10 soal pilihan berganda.
+    * 💡 **Umpan Balik Langsung:** Anda tidak hanya mengetahui apakah jawaban Anda benar atau salah, tetapi juga akan mendapatkan penjelasan (feedback) langsung mengenai alasan di baliknya.
+    
+    👈 *Silakan klik menu **2. Materi Komputer** pada panel di sebelah kiri untuk mulai belajar!*
     """)
-    
-    st.info("💡 **Pertanyaan:** Apa strategi yang akan kamu gunakan?")
-    
-    strategi = st.radio(
-        "Pilih langkah kerjamu:",
-        ["[Pilih Strategi...]", 
-         "A. Mengetik satu per satu nama dari awal sampai surat ke-500.", 
-         "B. Membuat 1 format surat, di-copy-paste 500 kali, lalu mengubah nama secara manual.", 
-         "C. Membuat 1 format surat di Word, membuat tabel daftar nama di Excel, lalu menghubungkan keduanya otomatis."]
-    )
-    
-    if strategi != "[Pilih Strategi...]":
-        if strategi == "C. Membuat 1 format surat di Word, membuat tabel daftar nama di Excel, lalu menghubungkan keduanya otomatis.":
-            st.success("🎯 **Brilian! Pikiran seorang Profesional.**")
-            st.markdown("""
-            Strategi yang kamu pilih dikenal sebagai **Mail Merge (Surat Massal)**. 
-            Alih-alih bekerja keras (*work hard*), kamu bekerja cerdas (*work smart*). 
-            
-            **Mengapa ini penting di dunia kerja?**
-            - **Waktu:** Dari 3 hari kerja menjadi hanya 3 menit.
-            - **Akurasi:** Nol *typo*. Apa yang ada di Excel, itu yang tercetak di Word.
-            """)
-            if 'kasus1' not in st.session_state.modul_selesai:
-                st.session_state.modul_selesai.append('kasus1')
-        elif strategi == "B. Membuat 1 format surat, di-copy-paste 500 kali, lalu mengubah nama secara manual.":
-            st.warning("⚠️ **Masuk Akal, Tapi Berbahaya.**")
-            st.markdown("""
-            Cara ini lebih cepat dari mengetik manual, tapi bayangkan jika di surat ke-300 kamu salah meng-copy nama? Atau tiba-tiba bos meminta format tanggalnya diubah? Kamu harus mengedit 500 halaman satu per satu!
-            
-            Solusi yang dicari perusahaan adalah **Otomatisasi**, yaitu menggunakan **Mail Merge**.
-            """)
-        else:
-            st.error("❌ **Kerja Keras yang Tidak Efisien.**")
-            st.markdown("""
-            Jika kamu menggunakan cara ini, kamu baru akan selesai lusa, dan bosmu pasti akan marah besar.
-            Di era digital, kita menyerahkan tugas berulang kepada mesin. Solusinya adalah fitur **Mail Merge**.
-            """)
 
-# --- HALAMAN 2: SIMULATOR EXCEL (Learning by Doing) ---
-elif menu == "2. Simulator Logika Excel":
-    st.title("Kasus 2: Menjadi Analis Data HRD 📊")
-    st.write("Perhatikan tabel gaji karyawan di bawah ini.")
+# ==========================================
+# HALAMAN 2: MATERI PEMBELAJARAN
+# ==========================================
+elif menu == "2. Materi Komputer":
+    st.title("Materi: Pengenalan Komputer & Komponennya 📖")
     
-    # Data Simulasi
-    df = pd.DataFrame({
-        "Nama Karyawan": ["Andi", "Budi", "Siti", "Dina"],
-        "Target Penjualan (Juta)": [10, 5, 12, 8],
-    })
-    st.table(df)
-    
-    st.markdown("""
-    **Aturan Perusahaan:** 
-    Jika karyawan mencapai Target Penjualan **10 Juta atau lebih**, mereka mendapat status `"Bonus"`. Jika di bawah itu, statusnya `"Tidak Bonus"`.
+    st.header("1. Apa Itu Komputer?")
+    st.write("""
+    Secara sederhana, **Komputer** adalah perangkat elektronik yang dapat menerima data masukan (Input), memproses data tersebut (Process), dan menghasilkan informasi berupa keluaran (Output), serta dapat menyimpan data (Storage). 
+    Siklus dasar komputer selalu berputar pada: **Input ➡️ Proses ➡️ Output**.
     """)
     
-    st.info("👨‍💻 **Tugasmu:** Ketikkan rumus logika Excel (Fungsi IF) untuk sel karyawan Andi secara tepat!")
+    st.divider()
     
-    jawaban_excel = st.text_input("Ketik rumusmu di sini (Dimulai dengan =IF...):", placeholder='Contoh: =IF(B2>100, "Ya", "Tidak")')
+    st.header("2. Tiga Elemen Utama Sistem Komputer")
+    st.write("Agar komputer dapat menyala dan digunakan, ia membutuhkan 3 elemen yang tidak bisa dipisahkan:")
     
-    if jawaban_excel:
-        jawaban_bersih = jawaban_excel.upper().replace(" ", "")
+    # Elemen 1: Hardware
+    with st.expander("🖥️ 1. Hardware (Perangkat Keras) - Klik untuk detail", expanded=True):
+        st.write("Komponen fisik komputer yang bisa dilihat dan diraba. Dibagi menjadi 4 bagian:")
+        st.markdown("""
+        * **Input Device (Perangkat Masukan):** Alat untuk memasukkan data ke komputer. 
+          * *Contoh:* Keyboard, Mouse, Microphone, Scanner.
+        * **Processing Device (Perangkat Pemroses):** Otak komputer yang mengolah data.
+          * *CPU (Processor):* Mengeksekusi semua perintah.
+          * *RAM (Random Access Memory):* Penyimpanan sementara yang sangat cepat. Data di RAM akan hilang jika komputer dimatikan.
+        * **Output Device (Perangkat Keluaran):** Menampilkan hasil pemrosesan data.
+          * *Contoh:* Monitor (visual), Printer (cetak kertas), Speaker (suara).
+        * **Storage Device (Perangkat Penyimpanan):** Menyimpan data secara permanen.
+          * *Contoh:* Hardisk (HDD), SSD, Flashdisk. (SSD jauh lebih cepat daripada HDD).
+        """)
         
-        # Validasi logika berlapis (meniru pola pikir siswa)
-        if "=IF(" not in jawaban_bersih:
-            st.error("Rumus Excel selalu dimulai dengan `=IF(` untuk pengujian logika. Coba lagi!")
-        elif "10" not in jawaban_bersih:
-            st.warning("Kamu belum memasukkan angka syarat targetnya, yaitu 10. Coba periksa lagi.")
-        elif ">=" in jawaban_bersih and '"BONUS"' in jawaban_bersih and '"TIDAKBONUS"' in jawaban_bersih:
-            st.success("✅ **Sempurna! Kamu memahami logika bersyarat.**")
-            st.code('Jawaban Ideal: =IF(B2>=10, "Bonus", "Tidak Bonus")')
-            st.markdown("""
-            **Kenapa harus pakai `>=` (Lebih besar sama dengan)?**
-            Karena aturan mengatakan "10 Juta **atau lebih**". Jika kamu hanya memakai `>`, maka orang yang mendapat pas 10 Juta (seperti Andi) tidak akan dapat bonus. Hal kecil ini sangat krusial dalam data keuangan!
-            """)
-            if 'kasus2' not in st.session_state.modul_selesai:
-                st.session_state.modul_selesai.append('kasus2')
-        else:
-            st.error("Hampir. Perhatikan struktur penulisannya: `=IF(Logika_Pengujian, \"Nilai_Jika_Benar\", \"Nilai_Jika_Salah\")`")
+    # Elemen 2: Software
+    with st.expander("💿 2. Software (Perangkat Lunak)"):
+        st.write("""
+        Program atau aplikasi tidak berwujud fisik yang memberikan instruksi kepada *hardware* agar bisa bekerja.
+        * *Contoh Sistem Operasi:* Windows, macOS, Linux, Android.
+        * *Contoh Aplikasi:* Microsoft Word, Google Chrome, Game.
+        """)
 
-# --- HALAMAN 3: EVALUASI HOTS ---
-elif menu == "3. Uji Pemikiran (HOTS)":
-    st.title("🧠 Uji Pemikiran Kritis (Pretest/Posttest)")
-    st.write("Soal ini menguji apakah kamu memahami **konsep**, bukan sekadar menghafal tombol.")
-    
-    st.markdown("**Kasus:**")
-    st.info("""
-    Kamu sedang membuat Laporan PKL/Prakerin (Praktek Kerja Lapangan) yang tebalnya 100 halaman di Microsoft Word.
-    Di halaman 95, kamu menyadari bahwa semua sub-judul Laporan harus diubah dari ukuran font 12 menjadi 14, dan ditebalkan (Bold). 
-    """)
-    
-    jawaban_hots = st.radio(
-        "Cara apa yang paling cepat dan tidak berisiko merusak format dokumen untuk mengubah semua sub-judul tersebut?",
-        ["[Pilih Jawaban]",
-         "A. Scroll perlahan, blok satu per satu setiap sub-judul dari halaman 1 sampai 100, lalu ubah font-nya.",
-         "B. Menggunakan fitur CTRL+A (Select All) lalu ubah ukurannya menjadi 14.",
-         "C. Mengubah pengaturan pada menu 'Heading 2' (Styles) yang sudah diterapkan, lalu pilih 'Update to Match Selection' otomatis.",
-         "D. Membuka dokumen baru, menyalin teks perlahan, dan mengatur ulang semuanya dari awal."]
-    )
-    
-    if jawaban_hots != "[Pilih Jawaban]":
-        if jawaban_hots.startswith("C"):
-            st.success("🎉 **Jawaban Tepat! Otak Analitis.**")
-            st.markdown("""
-            **Feedback:** 
-            Inilah fungsi sejati dari fitur **Styles (Heading 1, Heading 2)** di Word. Selain untuk membuat Daftar Isi otomatis, fitur ini bertindak sebagai 'Tuan Rumah' bagi format teks. Jika Tuan Rumahnya diubah, seluruh teks di 100 halaman yang menggunakan status tersebut akan berubah dalam **1 detik**. 
-            Siswa yang paham konsep ini siap menyusun skripsi atau laporan kerja tanpa menangis karena format yang berantakan!
-            """)
-            if 'kasus3' not in st.session_state.modul_selesai:
-                st.session_state.modul_selesai.append('kasus3')
-        elif jawaban_hots.startswith("A"):
-            st.error("❌ **Terlalu Melelahkan.**")
-            st.markdown("**Feedback:** Memblok teks satu per satu di dokumen 100 halaman butuh waktu berjam-jam, dan berisiko ada judul yang terlewat. Gunakan sistem *Styles* (Heading) agar Word yang bekerja untukmu, bukan sebaliknya.")
-        elif jawaban_hots.startswith("B"):
-            st.warning("⚠️ **Hati-hati!**")
-            st.markdown("**Feedback:** CTRL+A akan memilih *seluruh isi dokumen*, termasuk isi paragraf biasa. Nanti isi laporanmu ikut-ikutan membesar dan menjadi Bold semua. Itu akan merusak laporanmu.")
-        else:
-            st.error("❌ **Jawaban Keliru.** Memulai dari awal hanya membuang waktu. Gunakan fitur *Styles*.")
+    # Elemen 3: Brainware
+    with st.expander("👤 3. Brainware (Pengguna)"):
+        st.write("""
+        Manusia yang mengoperasikan, menggunakan, atau mengendalikan komputer. Tanpa manusia, komputer hanyalah mesin mati.
+        * *Contoh:* Programmer, Teknisi, Operator (Anda sendiri).
+        """)
 
-# --- FOOTER & KESIMPULAN ---
-if len(st.session_state.modul_selesai) == 3:
-    st.balloons()
-    st.sidebar.success("🏆 Selamat! Kamu sudah memiliki mindset seorang profesional TIK.")
+# ==========================================
+# HALAMAN 3: LATIHAN SOAL & FEEDBACK
+# ==========================================
+elif menu == "3. Latihan Evaluasi":
+    st.title("Latihan Pilihan Berganda 📝")
+    st.write("Kerjakan 10 soal di bawah ini. Sistem akan langsung memberikan penjelasan (feedback) saat Anda memilih jawaban.")
+    st.divider()
+
+    # Dictionary Soal untuk efisiensi kode
+    soal_latihan = [
+        {
+            "id": 1,
+            "pertanyaan": "Secara definisi, apa yang dimaksud dengan komputer?",
+            "opsi": ["Mesin ketik modern yang canggih", "Perangkat elektronik yang menerima input, memproses data, dan menghasilkan output", "Alat penyimpanan data berkapasitas besar", "Perangkat lunak untuk membuat dokumen"],
+            "jawaban_benar": "Perangkat elektronik yang menerima input, memproses data, dan menghasilkan output",
+            "alasan_benar": "Tepat sekali. Esensi dari komputer adalah kemampuannya menjalankan siklus Input, Proses, dan Output.",
+            "alasan_salah": "Kurang tepat. Komputer tidak hanya sekadar menyimpan data atau mesin ketik, melainkan memiliki siklus pemrosesan data (Input -> Proses -> Output)."
+        },
+        {
+            "id": 2,
+            "pertanyaan": "Komponen fisik pada komputer yang dapat dilihat dan diraba secara langsung disebut...",
+            "opsi": ["Software", "Brainware", "Hardware", "Malware"],
+            "jawaban_benar": "Hardware",
+            "alasan_benar": "Benar! 'Hard' berarti keras/fisik, dan 'ware' berarti perangkat. Contohnya adalah monitor, keyboard, dan CPU.",
+            "alasan_salah": "Salah. Software adalah perangkat lunak (tidak bisa disentuh), Brainware adalah penggunanya, dan Malware adalah virus/program jahat."
+        },
+        {
+            "id": 3,
+            "pertanyaan": "Berikut ini yang merupakan contoh dari perangkat masukan (Input Device) adalah...",
+            "opsi": ["Monitor dan Printer", "Keyboard dan Mouse", "CPU dan RAM", "Hardisk dan Flashdisk"],
+            "jawaban_benar": "Keyboard dan Mouse",
+            "alasan_benar": "Benar. Keyboard untuk memasukkan data teks, dan mouse untuk memasukkan instruksi pergerakan kursor.",
+            "alasan_salah": "Keliru. Monitor/Printer adalah Output, CPU/RAM adalah Process, sedangkan Hardisk/Flashdisk adalah Storage."
+        },
+        {
+            "id": 4,
+            "pertanyaan": "Komponen yang bertindak sebagai 'Otak' dari sebuah sistem komputer dan bertugas mengeksekusi semua instruksi adalah...",
+            "opsi": ["RAM", "Motherboard", "CPU (Processor)", "SSD"],
+            "jawaban_benar": "CPU (Processor)",
+            "alasan_benar": "Tepat! CPU (Central Processing Unit) adalah otak utama yang melakukan semua perhitungan dan pengambilan keputusan di dalam mesin.",
+            "alasan_salah": "Salah. RAM hanya meja kerja sementara, motherboard adalah papan sirkuit tempat komponen menempel, dan SSD adalah gudang penyimpanan."
+        },
+        {
+            "id": 5,
+            "pertanyaan": "Karakteristik utama dari RAM (Random Access Memory) adalah...",
+            "opsi": ["Menyimpan data secara permanen", "Hanya bisa digunakan untuk menyimpan video", "Menyimpan data sementara dan datanya hilang saat komputer dimatikan", "Membantu monitor menampilkan warna"],
+            "jawaban_benar": "Menyimpan data sementara dan datanya hilang saat komputer dimatikan",
+            "alasan_benar": "Benar sekali. Sifat RAM adalah 'Volatile', artinya ia membutuhkan arus listrik untuk menyimpan data sementara saat aplikasi sedang berjalan.",
+            "alasan_salah": "Salah. Penyimpanan permanen adalah tugas Hardisk/SSD, bukan RAM."
+        },
+        {
+            "id": 6,
+            "pertanyaan": "Perangkat keluaran (Output Device) yang berfungsi untuk menampilkan informasi berupa gambar atau antarmuka visual adalah...",
+            "opsi": ["Scanner", "Printer", "Monitor", "Speaker"],
+            "jawaban_benar": "Monitor",
+            "alasan_benar": "Benar. Monitor berfungsi menerjemahkan sinyal digital dari komputer menjadi tampilan visual di layar.",
+            "alasan_salah": "Keliru. Scanner adalah alat input, Printer mengeluarkan data ke kertas (fisik), dan Speaker mengeluarkan bentuk suara (audio)."
+        },
+        {
+            "id": 7,
+            "pertanyaan": "Apa perbedaan utama antara HDD (Hard Disk Drive) dan SSD (Solid State Drive)?",
+            "opsi": ["HDD digunakan untuk Input, SSD untuk Output", "SSD memiliki kecepatan baca/tulis data yang jauh lebih cepat daripada HDD", "HDD adalah software, SSD adalah hardware", "HDD bentuknya cair, SSD bentuknya padat"],
+            "jawaban_benar": "SSD memiliki kecepatan baca/tulis data yang jauh lebih cepat daripada HDD",
+            "alasan_benar": "Tepat! SSD menggunakan memori flash tanpa komponen bergerak mekanik, sehingga jauh lebih cepat dan tahan guncangan dibanding HDD.",
+            "alasan_salah": "Kurang tepat. Keduanya sama-sama hardware perangkat penyimpanan (Storage), perbedaannya terletak pada kecepatan dan teknologi pembacaan datanya."
+        },
+        {
+            "id": 8,
+            "pertanyaan": "Windows, Linux, dan aplikasi seperti Microsoft Word merupakan kelompok dari...",
+            "opsi": ["Hardware", "Software", "Brainware", "Freeware"],
+            "jawaban_benar": "Software",
+            "alasan_benar": "Benar. Windows/Linux adalah Software Sistem Operasi, sedangkan Microsoft Word adalah Software Aplikasi.",
+            "alasan_salah": "Salah. Karena wujudnya berupa program (tidak bisa disentuh fisik), mereka masuk kategori Software, bukan Hardware atau Brainware."
+        },
+        {
+            "id": 9,
+            "pertanyaan": "Manusia yang bertindak sebagai pembuat, pengontrol, atau pengguna sistem komputer disebut sebagai...",
+            "opsi": ["Software", "Hardware", "Brainware", "Spyware"],
+            "jawaban_benar": "Brainware",
+            "alasan_benar": "Tepat sekali. 'Brain' berarti otak manusia. Secanggih apapun hardware dan software, mereka membutuhkan manusia (brainware) untuk mengarahkannya.",
+            "alasan_salah": "Salah. Hardware itu fisik mesin, software itu aplikasinya. Penggunanya adalah Brainware."
+        },
+        {
+            "id": 10,
+            "pertanyaan": "Urutan siklus pemrosesan informasi pada komputer yang benar adalah...",
+            "opsi": ["Output -> Proses -> Input", "Proses -> Input -> Output", "Input -> Output -> Proses", "Input -> Proses -> Output"],
+            "jawaban_benar": "Input -> Proses -> Output",
+            "alasan_benar": "Sempurna! Kita memasukkan perintah (Input), kemudian CPU mengolahnya (Proses), dan hasilnya ditampilkan ke layar/speaker (Output).",
+            "alasan_salah": "Keliru. Komputer tidak bisa memproses sesuatu yang belum dimasukkan, dan tidak bisa mengeluarkan hasil (output) sebelum diproses. Urutan mutlaknya adalah: Masuk (Input) -> Olah (Proses) -> Keluar (Output)."
+        }
+    ]
+
+    # Iterasi untuk merender 10 soal
+    for idx, item in enumerate(soal_latihan):
+        st.markdown(f"**{item['id']}. {item['pertanyaan']}**")
+        
+        opsi_jawaban = ["[Pilih Jawaban]"] + item['opsi']
+        jawaban_user = st.radio(f"Jawaban No {item['id']}:", opsi_jawaban, label_visibility="collapsed", key=f"soal_{item['id']}")
+        
+        # Logika Feedback Langsung
+        if jawaban_user != "[Pilih Jawaban]":
+            if jawaban_user == item['jawaban_benar']:
+                st.success(f"✅ **BENAR!**\n\n**Penjelasan:** {item['alasan_benar']}")
+            else:
+                st.error(f"❌ **SALAH!**\n\n**Penjelasan:** {item['alasan_salah']}")
+        st.markdown("---")
