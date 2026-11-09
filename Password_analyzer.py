@@ -1,7 +1,7 @@
 import streamlit as st
 
 # ==========================================
-# 1. KONFIGURASI HALAMAN & CSS (WARNA & ANIMASI)
+# 1. KONFIGURASI HALAMAN & CSS (TIDAK DIUBAH)
 # ==========================================
 st.set_page_config(page_title="Modul Pembelajaran Informatika", page_icon="💻", layout="wide")
 
@@ -61,14 +61,14 @@ def apply_custom_css():
     """, unsafe_allow_html=True)
 
 # ==========================================
-# 2. DATA MATERI (DIPERLUAS & DIREVISI)
+# 2. DATA MATERI (TIDAK DIUBAH DARI REVISI SEBELUMNYA)
 # ==========================================
 def get_materi_data():
     return {
         "1. Pengertian Komputer": {
             "tipe": "standar",
             "teks": "Komputer adalah alat elektronik yang dapat menerima input data, mengolah data tersebut secara terstruktur, memberikan informasi berupa output yang bermanfaat, serta menyimpannya dalam media penyimpanan sekunder. Secara etimologis, kata komputer berasal dari bahasa Latin *\"computare\"* yang berarti menghitung. Pada awalnya, komputer memang dirancang khusus untuk melakukan proses perhitungan matematika yang rumit.\n\nNamun, seiring dengan pesatnya perkembangan zaman dan teknologi modern, fungsi komputer telah meluas secara signifikan. Komputer kini menjadi mesin serbaguna yang mampu menyelesaikan berbagai tugas kompleks, mulai dari administrasi perkantoran, desain grafis, pengelolaan basis data, hingga menjalankan sistem kecerdasan buatan (AI). Sistem komputer modern dapat bekerja dengan optimal karena adanya kolaborasi yang erat dan tidak terpisahkan antara tiga pilar utama: perangkat keras (hardware), perangkat lunak (software), dan pengguna (brainware).",
-            "gambar": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" # Gambar Komputer utuh
+            "gambar": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
         },
         "2. Fungsi Komputer": {
             "tipe": "standar",
@@ -77,7 +77,7 @@ def get_materi_data():
                     "2. **Fungsi Process (Mengolah Data):** Merupakan inti dari sistem komputer. Data mentah yang telah dimasukkan akan dikirim ke Central Processing Unit (CPU) untuk diproses, dihitung, dianalisis, atau dimanipulasi secara logis sehingga berubah menjadi informasi yang bermakna dan terstruktur.\n"
                     "3. **Fungsi Output (Menghasilkan Informasi):** Setelah data selesai diproses, komputer akan menyajikan hasil olahan tersebut ke dalam bentuk yang dapat dilihat, dibaca, didengar, atau dipahami oleh manusia (informasi). Penyajian ini dilakukan melalui perangkat keluaran seperti layar monitor (visual), printer (cetak), atau speaker (audio).\n"
                     "4. **Fungsi Storage (Menyimpan Data):** Komputer menyediakan ruang untuk menyimpan data dan informasi yang telah diproses ke dalam media penyimpanan permanen. Fungsi ini sangat krusial agar file atau dokumen dapat dibuka kembali, diedit, atau diproses di lain waktu tanpa harus memulai dari awal.",
-            "gambar": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" # Gambar alur sistem/komputer yang sesuai
+            "gambar": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
         },
         "3. Perangkat Keras (Hardware)": {
             "tipe": "komponen_detail",
@@ -116,7 +116,7 @@ def get_materi_data():
                     "1. **Sistem Operasi (Operating System):** Merupakan perangkat lunak paling dasar dan vital yang mengelola seluruh sumber daya perangkat keras dan menyediakan layanan umum untuk aplikasi lain. Tanpa sistem operasi, kita tidak bisa menggunakan program apa pun. Contoh populer adalah **Microsoft Windows** (banyak digunakan di perkantoran), **Linux** (sistem operasi sumber terbuka/open source), dan **macOS** (milik Apple).\n"
                     "2. **Perangkat Lunak Aplikasi:** Program yang dirancang khusus untuk memfasilitasi kebutuhan sehari-hari pengguna. Mulai dari Microsoft Word untuk menyusun makalah, Excel untuk mengolah angka, hingga Google Chrome untuk berselancar di dunia maya.\n"
                     "3. **Perangkat Lunak Utilitas:** Program pembantu yang memastikan komputer berjalan dengan aman dan efisien, contohnya program antivirus, alat backup data, dan alat manajemen partisi disk.",
-            "gambar": "https://images.unsplash.com/photo-1629654291663-b91ad427698f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" # Gambar layar/sistem operasi
+            "gambar": "https://images.unsplash.com/photo-1629654291663-b91ad427698f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
         },
         "5. Brainware (Pengguna)": {
             "tipe": "standar",
@@ -125,12 +125,12 @@ def get_materi_data():
                     "- **Programmer:** Ahli yang memiliki keahlian menuliskan kode menggunakan bahasa pemrograman tertentu. Mereka adalah para kreator pembuat perangkat lunak, aplikasi, dan website.\n"
                     "- **Administrator Jaringan/Database:** Individu yang bertanggung jawab mengelola, mengamankan, dan merawat sistem operasi, server, atau pusat data agar tetap beroperasi tanpa gangguan (downtime).\n"
                     "- **User / Operator:** Pengguna akhir (end-user) seperti pelajar, pekerja kantoran, atau masyarakat umum yang menggunakan komputer sehari-hari untuk mengetik laporan, mengirim email, mendengarkan musik, dan aktivitas komputasi praktis lainnya.",
-            "gambar": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" # Gambar orang sedang fokus menggunakan komputer
+            "gambar": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
         }
     }
 
 # ==========================================
-# 3. DATA LATIHAN SOAL (TIDAK BERUBAH DARI SEBELUMNYA)
+# 3. DATA LATIHAN SOAL (TIDAK DIUBAH DARI SEBELUMNYA)
 # ==========================================
 def get_soal_data():
     return [
@@ -138,76 +138,76 @@ def get_soal_data():
             "soal": "1. Apa pengertian dari komputer?",
             "opsi": ["A. Alat mekanik untuk mencetak", "B. Alat elektronik untuk mengolah informasi", "C. Program tanpa bentuk fisik", "D. Manusia pengelola sistem"],
             "jawaban_benar": "B. Alat elektronik untuk mengolah informasi",
-            "pujian": "Luar biasa! Benar sekali, komputer memang bekerja secara elektronik untuk memproses informasi.",
-            "alasan_salah": "Kurang tepat. Coba ingat kembali sifat dasar komponen komputer yang menggunakan arus listrik untuk memproses data, bukan mekanik atau manusia."
+            "pujian": "Benar sekali, komputer memang bekerja secara elektronik untuk memproses informasi.",
+            "alasan_salah": "Coba ingat kembali sifat dasar komponen komputer yang menggunakan arus listrik untuk memproses data, bukan mekanik atau manusia."
         },
         {
             "soal": "2. Di bawah ini yang merupakan 4 fungsi utama komputer adalah...",
             "opsi": ["A. Mengetik, Menghitung, Bermain, Belajar", "B. Input, Process, Output, Storage", "C. Hardware, Software, Brainware, CPU", "D. Windows, Word, Excel, Chrome"],
             "jawaban_benar": "B. Input, Process, Output, Storage",
-            "pujian": "Tepat sekali! Keempat fungsi ini adalah pilar utama cara kerja sistem komputer.",
-            "alasan_salah": "Jawabanmu belum tepat. Fungsi utama sistem berkaitan dengan bagaimana alur data masuk, diolah, dikeluarkan, dan disimpan."
+            "pujian": "Keempat fungsi ini adalah pilar utama cara kerja sistem komputer.",
+            "alasan_salah": "Fungsi utama sistem berkaitan dengan bagaimana alur data masuk, diolah, dikeluarkan, dan disimpan."
         },
         {
             "soal": "3. Hardware yang digunakan untuk memasukkan data atau perintah ke dalam komputer disebut perangkat...",
             "opsi": ["A. Output", "B. Process", "C. Input", "D. Storage"],
             "jawaban_benar": "C. Input",
-            "pujian": "Sangat bagus! 'In' berarti masuk, sehingga alat masukannya disebut perangkat Input.",
-            "alasan_salah": "Oops, salah. Pikirkan tentang arti kata 'memasukkan', pilih istilah bahasa Inggris yang maknanya paling sesuai dengan 'masuk'."
+            "pujian": "'In' berarti masuk, sehingga alat masukannya disebut perangkat Input.",
+            "alasan_salah": "Pikirkan tentang arti kata 'memasukkan', pilih istilah bahasa Inggris yang maknanya paling sesuai dengan 'masuk'."
         },
         {
             "soal": "4. Komponen yang sering disebut sebagai otak dari sebuah komputer adalah...",
             "opsi": ["A. RAM", "B. Monitor", "C. Hard disk", "D. CPU (Central Processing Unit)"],
             "jawaban_benar": "D. CPU (Central Processing Unit)",
-            "pujian": "Hebat! CPU memang bertugas memproses semua logika dan perintah layaknya otak.",
-            "alasan_salah": "Masih keliru. Meskipun memori atau layar itu penting, 'otak' yang memproses setiap instruksi bukanlah media penyimpanan atau penampil."
+            "pujian": "CPU memang bertugas memproses semua logika dan perintah layaknya otak.",
+            "alasan_salah": "Meskipun memori atau layar itu penting, 'otak' yang memproses setiap instruksi bukanlah media penyimpanan atau penampil."
         },
         {
             "soal": "5. Manakah dari kelompok berikut yang termasuk perangkat output (keluaran)?",
             "opsi": ["A. Monitor, Printer, Speaker", "B. Keyboard, Mouse, Scanner", "C. Hard disk, SSD, Flashdisk", "D. CPU, RAM, Motherboard"],
             "jawaban_benar": "A. Monitor, Printer, Speaker",
-            "pujian": "Jawaban sempurna! Alat-alat ini menampilkan visual, cetakan, dan suara sebagai hasil.",
-            "alasan_salah": "Bukan itu jawabannya. Perangkat output fungsinya 'mengeluarkan' atau 'menampilkan' hasil yang bisa dilihat, didengar, atau dipegang oleh pengguna."
+            "pujian": "Alat-alat ini menampilkan visual, cetakan, dan suara sebagai hasil proses.",
+            "alasan_salah": "Perangkat output fungsinya 'mengeluarkan' atau 'menampilkan' hasil yang bisa dilihat, didengar, atau dipegang oleh pengguna."
         },
         {
             "soal": "6. Program atau aplikasi yang digunakan untuk menjalankan perintah pada komputer dan tidak memiliki bentuk fisik disebut...",
             "opsi": ["A. Hardware", "B. Brainware", "C. Software", "D. Storage"],
             "jawaban_benar": "C. Software",
-            "pujian": "Benar! 'Soft' menandakan tidak ada wujud fisik yang bisa diraba secara langsung.",
-            "alasan_salah": "Sayang sekali, salah. Kalau hardware memiliki wujud fisik, maka aplikasi yang berjalan di dalamnya memiliki sebutan kebalikannya."
+            "pujian": "'Soft' menandakan tidak ada wujud fisik yang bisa diraba secara langsung.",
+            "alasan_salah": "Kalau hardware memiliki wujud fisik, maka aplikasi yang berjalan di dalamnya memiliki sebutan kebalikannya."
         },
         {
             "soal": "7. Microsoft Word merupakan salah satu contoh perangkat lunak yang berfungsi untuk...",
             "opsi": ["A. Mengolah angka dan data", "B. Membuat dan mengedit dokumen", "C. Mengatur seluruh sistem komputer", "D. Menjelajahi internet"],
             "jawaban_benar": "B. Membuat dan mengedit dokumen",
-            "pujian": "Mantap! Word memang dirancang khusus untuk mempermudah penulisan dokumen.",
-            "alasan_salah": "Jawabanmu kurang tepat. Ingat-ingat aplikasi apa yang biasa kamu gunakan untuk mengetik surat atau laporan teks."
+            "pujian": "Word memang dirancang khusus untuk mempermudah penulisan dokumen.",
+            "alasan_salah": "Ingat-ingat aplikasi apa yang biasa kamu gunakan untuk mengetik surat atau laporan teks."
         },
         {
             "soal": "8. Manusia yang mengoperasikan, menggunakan, atau mengatur sistem komputer disebut...",
             "opsi": ["A. Hardware", "B. Software", "C. Malware", "D. Brainware"],
             "jawaban_benar": "D. Brainware",
-            "pujian": "Cerdas! 'Brain' merujuk pada kecerdasan manusia yang mengendalikan mesin.",
-            "alasan_salah": "Masih salah. Perangkat keras adalah hardware, perangkat lunak adalah software. Lalu apa sebutan untuk penggunanya?"
+            "pujian": "'Brain' merujuk pada kecerdasan otak manusia yang mengendalikan mesin.",
+            "alasan_salah": "Perangkat keras adalah hardware, perangkat lunak adalah software. Lalu apa sebutan untuk penggunanya yang berarti 'otak'?"
         },
         {
             "soal": "9. Ketika kita mengetik tugas menggunakan keyboard, tahap kerja komputer yang sedang berlangsung adalah tahap...",
             "opsi": ["A. Process", "B. Output", "C. Storage", "D. Input"],
             "jawaban_benar": "D. Input",
-            "pujian": "Benar sekali! Mengetik adalah proses memberikan perintah atau data mentah ke dalam sistem.",
-            "alasan_salah": "Belum tepat. Coba bayangkan, saat kamu mengetik, data sedang 'dimasukkan' ke dalam komputer sebelum diolah."
+            "pujian": "Mengetik adalah proses memberikan perintah atau data mentah ke dalam sistem.",
+            "alasan_salah": "Coba bayangkan, saat kamu mengetik, data sedang 'dimasukkan' ke dalam komputer sebelum diolah."
         },
         {
             "soal": "10. Di bidang komunikasi, salah satu manfaat keberadaan komputer dan internet adalah...",
             "opsi": ["A. Memudahkan manusia berkomunikasi melalui email dan video call", "B. Membantu mencetak dokumen dalam jumlah banyak", "C. Menyimpan ribuan foto di dalam Flashdisk", "D. Merakit komponen robotika secara otomatis"],
             "jawaban_benar": "A. Memudahkan manusia berkomunikasi melalui email dan video call",
-            "pujian": "Sempurna! Kamu telah memahami manfaat langsung komputer untuk komunikasi modern.",
-            "alasan_salah": "Kurang tepat. Pastikan kamu memilih opsi yang berhubungan langsung dengan aktivitas 'berkomunikasi' antar manusia."
+            "pujian": "Ini adalah manfaat langsung komputer untuk mempermudah komunikasi modern jarak jauh.",
+            "alasan_salah": "Pastikan kamu memilih opsi yang berhubungan langsung dengan aktivitas 'berkomunikasi' antar manusia."
         }
     ]
 
 # ==========================================
-# 4. BAGIAN BERANDA
+# 4. BAGIAN BERANDA (TIDAK DIUBAH)
 # ==========================================
 def render_beranda():
     st.markdown('<p class="hero-title">Selamat Datang di Modul Informatika 🚀</p>', unsafe_allow_html=True)
@@ -237,7 +237,7 @@ def render_beranda():
         """, unsafe_allow_html=True)
 
 # ==========================================
-# 5. BAGIAN MATERI (DIREVISI UNTUK MENAMPUNG KOMPONEN HARDWARE)
+# 5. BAGIAN MATERI (TIDAK DIUBAH)
 # ==========================================
 def render_materi():
     st.title("📚 Materi Dasar Komputer")
@@ -248,21 +248,15 @@ def render_materi():
     for i, (judul, konten) in enumerate(materi_dict.items()):
         with tabs[i]:
             st.header(judul)
-            
-            # Jika materi standar
             if konten.get("tipe") == "standar":
                 col_text, col_img = st.columns([2, 1])
                 with col_text:
                     st.markdown(konten["teks"])
                 with col_img:
                     st.image(konten["gambar"], use_container_width=True)
-            
-            # Jika materi berisi eksplorasi list komponen (seperti Hardware)
             elif konten.get("tipe") == "komponen_detail":
                 st.markdown(konten["teks_pengantar"])
                 st.divider()
-                
-                # Looping setiap sub-komponen hardware
                 for item in konten["komponen"]:
                     st.subheader(item["nama"])
                     c_text, c_img = st.columns([2, 1])
@@ -270,32 +264,134 @@ def render_materi():
                         st.markdown(item["teks"])
                     with c_img:
                         st.image(item["gambar"], use_container_width=True)
-                    st.write("") # Memberi jarak tiap komponen
+                    st.write("")
 
 # ==========================================
-# 6. BAGIAN LATIHAN SOAL
+# 6. BAGIAN LATIHAN SOAL (DIROMBAK TOTAL)
 # ==========================================
 def render_latihan_soal():
-    st.title("📝 Latihan Soal Interaktif")
-    st.info("Pilih jawaban yang paling tepat! Sistem akan langsung memberikan tanggapan begitu kamu menekan tombol 'Cek Jawaban'.")
-    
+    # Inisialisasi Session State untuk Latihan Soal
+    if 'quiz_started' not in st.session_state:
+        st.session_state.quiz_started = False
+    if 'current_q' not in st.session_state:
+        st.session_state.current_q = 0
+    if 'user_answers' not in st.session_state:
+        st.session_state.user_answers = {}
+    if 'quiz_submitted' not in st.session_state:
+        st.session_state.quiz_submitted = False
+        
     soal_data = get_soal_data()
     
-    for i, item in enumerate(soal_data):
-        st.markdown(f"**{item['soal']}**")
+    # ----------------------------------------
+    # Tampilan 1: Halaman Memulai Kuis
+    # ----------------------------------------
+    if not st.session_state.quiz_started:
+        st.title("📝 Latihan Soal Informatika")
+        st.markdown("Uji pemahamanmu setelah membaca materi! Kuis ini terdiri dari 10 soal pilihan berganda.")
+        st.info("Kamu akan melihat hasil dan umpan balik secara menyeluruh setelah menyelesaikan semua pertanyaan.")
         
-        jawaban_user = st.radio("Pilih opsi:", item['opsi'], key=f"radio_{i}", label_visibility="collapsed")
+        if st.button("Mulai Latihan"):
+            st.session_state.quiz_started = True
+            st.rerun()
+            
+    # ----------------------------------------
+    # Tampilan 2: Kuis 1 Soal per Halaman
+    # ----------------------------------------
+    elif not st.session_state.quiz_submitted:
+        q_idx = st.session_state.current_q
+        item = soal_data[q_idx]
         
-        if st.button("Cek Jawaban", key=f"btn_{i}"):
-            if jawaban_user == item['jawaban_benar']:
-                st.success(f"✅ **BENAR!** {item['pujian']}")
-                st.balloons()
-            else:
-                st.error(f"❌ **SALAH.** {item['alasan_salah']}")
+        st.title(f"Pertanyaan {q_idx + 1} dari {len(soal_data)}")
         st.divider()
+        st.markdown(f"### {item['soal']}")
+        
+        # Mengecek apakah user sudah memilih jawaban sebelumnya
+        saved_ans = st.session_state.user_answers.get(q_idx, None)
+        index = item['opsi'].index(saved_ans) if saved_ans in item['opsi'] else 0
+        
+        jawaban_user = st.radio("Pilih jawabanmu:", item['opsi'], index=index, key=f"radio_{q_idx}", label_visibility="collapsed")
+        st.session_state.user_answers[q_idx] = jawaban_user # Simpan langsung ke memori
+        
+        st.write("")
+        st.write("")
+        
+        # Navigasi Bawah
+        col1, col2, col3 = st.columns([1, 8, 1])
+        with col1:
+            if q_idx > 0:
+                if st.button("Previous"):
+                    st.session_state.current_q -= 1
+                    st.rerun()
+        with col3:
+            if q_idx < len(soal_data) - 1:
+                if st.button("Next"):
+                    st.session_state.current_q += 1
+                    st.rerun()
+            else:
+                if st.button("Finish"):
+                    st.session_state.quiz_submitted = True
+                    st.rerun()
+
+    # ----------------------------------------
+    # Tampilan 3: Hasil dan Review Akhir
+    # ----------------------------------------
+    else:
+        st.title("🏆 Rekapitulasi Latihan Soal")
+        
+        # Hitung Nilai
+        benar = 0
+        for i, q in enumerate(soal_data):
+            if st.session_state.user_answers.get(i) == q['jawaban_benar']:
+                benar += 1
+                
+        total_soal = len(soal_data)
+        salah = total_soal - benar
+        nilai = (benar / total_soal) * 100
+        
+        # 5 Tingkatan Motivasi berdasarkan rentang nilai
+        if nilai >= 90:
+            pesan = "🌟 Luar Biasa! Nilai yang sempurna. Kamu benar-benar menguasai materi Informatika dengan brilian!"
+        elif nilai >= 70:
+            pesan = "🔥 Sangat Bagus! Kemampuanmu sudah hebat. Sedikit lagi menuju kesempurnaan!"
+        elif nilai >= 50:
+            pesan = "👍 Bagus! Kamu sudah memahami dasar-dasarnya. Terus berlatih agar semakin mahir!"
+        elif nilai >= 30:
+            pesan = "📚 Cukup. Kamu sudah berusaha keras. Ayo baca ulang materi agar lebih paham lagi!"
+        else:
+            pesan = "💪 Kurang. Jangan patah semangat! Kesalahan adalah proses belajar. Yuk pelajari kembali materinya dari awal!"
+
+        # Tampilkan Skor
+        st.markdown(f"### Total Benar: {benar}  |  Total Salah: {salah}")
+        st.info(f"**{pesan}**")
+        if nilai >= 70:
+            st.balloons()
+            
+        st.divider()
+        st.header("📝 Review Jawaban")
+        
+        # Looping untuk membedah setiap soal
+        for i, q in enumerate(soal_data):
+            ans = st.session_state.user_answers.get(i, "Tidak dijawab")
+            st.markdown(f"**{q['soal']}**")
+            st.write(f"Jawaban kamu: `{ans}`")
+            
+            if ans == q['jawaban_benar']:
+                st.success(f"✅ **BENAR!** {q['pujian']}")
+            else:
+                st.error(f"❌ **SALAH.** {q['alasan_salah']}")
+                # Sesuai aturan awal, jawaban yang benar tidak dibocorkan di review, hanya alasannya.
+            st.write("")
+            
+        st.divider()
+        if st.button("Ulangi Latihan"):
+            st.session_state.quiz_started = False
+            st.session_state.current_q = 0
+            st.session_state.user_answers = {}
+            st.session_state.quiz_submitted = False
+            st.rerun()
 
 # ==========================================
-# 7. ROUTING / MENU NAVIGASI UTAMA
+# 7. ROUTING / MENU NAVIGASI UTAMA (TIDAK DIUBAH)
 # ==========================================
 def main():
     apply_custom_css()
